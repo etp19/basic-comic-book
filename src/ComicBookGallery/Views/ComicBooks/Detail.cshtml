@@ -1,5 +1,20 @@
 ﻿@{
     Layout = null;
+
+    var seriesTitle = "The Amazing Spider-Man";
+    var issueNumber = 700;
+    var description = "<p>young Peter Parker returns home to live with his Aunt May. " +
+                      "Under the watchful eye of mentor Tony Stark, Parker starts to " +
+                      "embrace his new found identity as Spider-Man.</p>";
+
+    var artists = new string[]
+    {
+        "Script: Dan Slott",
+        "Pencils: Humberto Ramos",
+        "Inks: Victor Olazaba",
+        "Colors: Edgar Delgado",
+        "Letters: Chris Eliopoulos"
+    };
 }
 
 <!DOCTYPE html>
@@ -11,7 +26,14 @@
 </head>
 <body>
     <div>
-        <h1>Detail page</h1>
+        <h1>@seriesTitle</h1>
+        <h2>Issue Number: @issueNumber</h2>
+        
+        <h5>Description:</h5>
+        <div>@Html.Raw(description)</div>
+        
+        <h5>Artists:</h5>
+        <div>@artists</div>
     </div>
 </body>
 </html>
