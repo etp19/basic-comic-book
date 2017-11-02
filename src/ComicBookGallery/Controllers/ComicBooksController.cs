@@ -10,7 +10,21 @@ namespace ComicBookGallery.Controllers
     {
         public ActionResult Detail()
         {
-            return View();
+            ViewBag.SeriesTitle = "The Amazing Spider-Man";
+            ViewBag.IssueNumber = 700;
+            ViewBag.Description = "<p>young Peter Parker returns home to live with his Aunt May. " +
+                              "Under the watchful eye of mentor Tony Stark, Parker starts to " +
+                              "embrace his new found identity as Spider-Man.</p>";
+
+            ViewBag.Artists = new string[]
+            {
+                "Script: Dan Slott",
+                "Pencils: Humberto Ramos",
+                "Inks: Victor Olazaba",
+                "Colors: Edgar Delgado",
+                "Letters: Chris Eliopoulos"
+            };
+                    return View();
         }
 
     }
