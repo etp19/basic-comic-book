@@ -1,5 +1,4 @@
-﻿
-namespace ComicBookGallery.Models
+﻿namespace ComicBookGallery.Models
 {
     public class ComicBook
     {

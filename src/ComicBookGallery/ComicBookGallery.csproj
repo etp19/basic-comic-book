@@ -123,6 +123,7 @@
     <Compile Include="Controllers\ComicBooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TrainingController.cs" />
+    <Compile Include="Data\ComicBookRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
