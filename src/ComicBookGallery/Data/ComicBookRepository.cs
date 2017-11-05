@@ -4,7 +4,7 @@ namespace ComicBookGallery.Data
 {
     public class ComicBookRepository
     {
-        private static ComicBook[] _comicBooks = new ComicBook[]
+        private static ComicBook[] _comicBooks = new ComicBook[] // array of objects
         {
             new ComicBook()
             {
@@ -58,7 +58,14 @@ namespace ComicBookGallery.Data
                 Favorite = false
             }
         };
-        public ComicBook GetComicBook(int id)
+
+        public ComicBook[] GetComicBooks() // method to return an array of ComicBook objects.
+        {
+            return _comicBooks;
+        }
+
+
+        public ComicBook GetComicBook(int id) // method to return a ComicBook object.
         {
             ComicBook comicBookToReturn = null;
 
