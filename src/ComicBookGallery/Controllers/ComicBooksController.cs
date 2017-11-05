@@ -1,31 +1,28 @@
-﻿using ComicBookGallery.Models;
+﻿using System.EnterpriseServices;
+using ComicBookGallery.Models;
 using System.Web.Mvc;
+using ComicBookGallery.Data;
 
 namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public ActionResult Detail()
+        private ComicBookRepository _comicBookRepository = null;
+
+        public ComicBooksController()
         {
-            var comicBook = new ComicBook()
+            _comicBookRepository = new ComicBookRepository();
+        }
+
+        public ActionResult Detail(int? id)
+        {
+            if (id == null)
             {
-                SeriesTitle = "The Amazing Spider-Man",
-                IssueNumber = 700,
-                DescriptionHtml = "<p>young Peter Parker returns home to live with his Aunt May. " +
-                              "Under the watchful eye of mentor Tony Stark, Parker starts to " +
-                              "embrace his new found identity as Spider-Man.</p>",
-                Artists = new Artist[]
-                {
-                    new Artist() {Name= "Dan Slott", Role = "Script"},
-                    new Artist() {Name= "Humberto Ramos", Role = "Pencils"},
-                    new Artist() {Name= "Victor Olazaba", Role = "Inks"},
-                    new Artist() {Name= "Edgar Delgado", Role = "Colors"},
-                    new Artist() {Name= "Chris Eliopoulos", Role = "Letters"},
+                return HttpNotFound();
+            }
 
-                }
-
-            };      
-                    return View(comicBook);
+            var comicBook = _comicBookRepository.GetComicBook(id.Value);
+            return View(comicBook);
         }
 
     }
